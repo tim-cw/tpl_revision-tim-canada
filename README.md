@@ -1,4 +1,4 @@
-# Production web - Tim Canada - Révision HTML/CSS/JS
+# Production web - Tim Québec - Révision HTML/CSS/JS
 
 <br><br><br><hr>
 Préparé par : Matthieu Parent et Jean-François Leblanc  
