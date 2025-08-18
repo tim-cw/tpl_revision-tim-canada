@@ -6,6 +6,7 @@ import { copyFileSync, mkdirSync, readdirSync, statSync } from "fs";
 const STACK_REPO = "git@github.com:tim-cw/timtools.git";
 const TMP_DIR = path.resolve("tmp-stack");
 const PACKAGE_JSON_PATH = path.resolve("package.json");
+const TIMTOOLS_DIR = path.resolve(".timtools");
 
 // Fonction utilitaire pour copier récursivement un dossier en ignorant .git
 function copyRecursive(src, dest) {
@@ -64,6 +65,12 @@ async function main() {
   console.log("Installation des dépendances du stack...");
   execSync("npm install", { stdio: "inherit" });
   console.log("Toutes les dépendances sont installées !");
+}
+
+// --> suppression du dossier .timtools si tout a fonctionné
+if (fs.existsSync(TIMTOOLS_DIR)) {
+  fs.rmSync(TIMTOOLS_DIR, { recursive: true, force: true });
+  console.log("🧹 Dossier .timtools supprimé");
 }
 
 main().catch((err) => {
