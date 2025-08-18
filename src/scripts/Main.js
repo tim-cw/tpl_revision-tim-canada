@@ -1,5 +1,5 @@
-import ComponentFactory from './ComponentFactory';
-import Icons from './utils/Icons';
+import ComponentFactory from './ComponentFactory.js';
+import Icons from './utils/Icons.js';
 
 class Main {
   constructor() {
@@ -9,9 +9,9 @@ class Main {
   init() {
     document.documentElement.classList.add('has-js');
 
-    new ComponentFactory();
-
     Icons.load();
+    new ComponentFactory();
   }
 }
+
 new Main();
